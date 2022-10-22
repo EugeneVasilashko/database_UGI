@@ -1,0 +1,21 @@
+{% extends "stat_vsr/base.html" %}
+
+{% block title %}
+    {{ title }}
+{% endblock title %}
+
+{% block log_in_out %}
+    <div class="login">
+        <p>
+            Вітаю, {{ name }}!
+            <a href="{% url 'total_ugi:logout' %}">Log Out</a>
+        </p>
+    </div>
+{% endblock log_in_out %}
+
+{% block content %}
+
+<h1>ТЕЛЕФОННИЙ ДОВІДНИК ГУНП</h1>
+
+
+{% endblock content %}

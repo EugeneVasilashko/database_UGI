@@ -1,0 +1,38 @@
+/* header styles */
+.header {
+    display: flex;
+    background-color: gray;
+    margin: 0px;
+}
+
+/* main styles */
+.main {
+    display: flex;
+    height: 100vh;
+}
+
+/* center styles */
+.center {
+    background-image: url(img/layout.jpeg);
+    width: 80%;
+    color: white;
+}
+
+.center h2, h3, h4 {
+    text-align: center;
+}
+
+.sidebar {
+    background-color: white;
+    width: 20%;
+    color: black;
+    overflow-y: scroll;
+}
+
+
+.left {
+    width: 80%;
+}
+
+
+

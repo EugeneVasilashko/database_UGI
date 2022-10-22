@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+{% load static %}
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>{% block title %} {% endblock title %}</title>
+        <link rel="stylesheet" href="{% static 'stat_vsr/styles.css' %}">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css">
+    </head>
+    
+    <body>
+        <header class="header">
+            <div class="left"></div>
+            <div class="login">
+                {% block log_in_out %} {% endblock log_in_out %}
+            </div>
+        </header>
+
+        <div class="main">
+            <aside class="sidebar">
+                <h2>Меню сторінки</h2>
+
+                <div class="vsr">
+                    <h2>Відділ службових розслідувань</h2>
+                    <h3>Створення нового запису</h3>
+                    <ul>
+                        <li><a href="{% url 'stat_vsr:all_materials_vsr' %}">Загальний облік матеріалів</a></li>
+                        <li><a href="{% url 'stat_vsr:investigations_vsr' %}">Облік службових розслідувань та дисциплінарних стягнень</a></li>
+                        <li><a href="{% url 'stat_vsr:policemen_vsr' %}">Працівники ВСР УГІ</a></li>
+                        <li><a href="{% url 'stat_vsr:id_vsr' %}">Інформаційні довідки</a></li>
+                    </ul>
+
+                    <h3>Звіти</h3>
+                    <ul>
+                        <li><a href="{% url 'stat_vsr:general_report_vsr' %}">Загальний звіт ВСР</a></li>
+                        <li><a href="{% url 'stat_vsr:investigations_report_vsr' %}">Звіт по дисциплінарним стягненням</a></li>
+                        <li><a href="{% url 'stat_vsr:current_work_vsr' %}">Звіт поточного навантаження</a></li>
+                        <li><a href="{% url 'stat_vsr:detailed_report_vsr' %}">Детальний звіт ВСР</a></li>
+                    </ul>
+
+                    <h3><a href="{% url 'stat_vsr:map_vsr' %}">Мапа правопорушень серед ОС</a></h3>
+                </div>
+                    
+                <div class="vp">
+                    <h2>Відділ підтримки</h2>
+                    <h3>Створення нового запису</h3>
+                    <ul>
+                        <li><a href="{% url 'stat_vp:all_materials_vp' %}">Загальний облік матеріалів</a></li>
+                        <li><a href="{% url 'stat_vp:inspections_results_vp' %}">Результати перевірок підрозділів</a></li>
+                        <li><a href="{% url 'stat_vp:policemen_vp' %}">Працівники ВП УГІ</a></li>
+                        <li><a href="{% url 'stat_vp:id_vp' %}">Інформаційні довідки</a></li>
+                        <li><a href="{% url 'stat_vp:memorandums_about_inspections_vp' %}">Доповідні записки за результати перевірок</a></li>
+                        <li><a href="{% url 'stat_vp:certificates_about_inspections_vp' %}">Довідки за результати перевірок</a></li>
+                        <li><a href="{% url 'stat_vp:investigations_vp' %}">Облік службових розслідувань та дисциплінарних стягнень</a></li>
+                    </ul>
+                    
+                    <h3>Звіти</h3>
+                    <ul>
+                        <li><a href="{% url 'stat_vp:general_report_vp' %}">Загальний звіт ВП</a></li>
+                        <li><a href="{% url 'stat_vp:current_work_vp' %}">Звіт поточного навантаження</a></li>
+                        <li><a href="{% url 'stat_vp:investigations_report_vp' %}">Звіт по дисциплінарним стягненням</a></li>
+                        <li><a href="{% url 'stat_vp:detailed_report_vp' %}">Детальний звіт ВП</a></li>
+                    </ul>
+                    
+                    <h3><a href="{% url 'stat_vp:map_vp' %}">Мапа перевірок підрозілів поліції</a></h3>
+                </div>
+
+                <div class="others">
+                    <h4><a href="{% url 'total_ugi:telephone_directory' %}">Довідник ГУНП в Дніпропетровській області</a></h4>
+                    
+                    <h4><a href="{% url 'total_ugi:app_guide' %}">Інструкція з використання застосунку</a></h4>
+                </div>
+
+            </aside>
+            <div class="center">
+                {% block content %} {% endblock content %}
+            </div>
+        </div>
+        
+<!--        <footer class="footer">-->
+<!--            <p>Контакти та інше гівно</p>-->
+<!--        </footer>-->
+
+    </body>
+</html>

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+{% load static %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ title }}</title>
+    <link rel="stylesheet" href="{% static 'total_ugi/styles_total_ugi.css' %}">
+</head>
+<body>
+    <h1>Вітаю Вас в программному комплексі CS AmidA</h1>
+    <h2>Для того, щоб розпочати роботу пройдіть утентифікацію натиснувши на кнопку під цим текстом.</h2>
+    <form action="{% url 'total_ugi:login' %}">
+      <button type="submit">Вхід до застосунку</button>
+    </form>
+</body>
+</html>

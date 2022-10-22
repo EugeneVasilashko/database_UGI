@@ -1,0 +1,23 @@
+{% extends "stat_vsr/base.html" %}
+
+
+{% block title %}
+    {{ title }}
+{% endblock title %}
+
+{% block log_in_out %}
+        <p>
+            Вітаю, {{ name }}!<a href="{% url 'stat_vsr:logout' %}">Log Out</a>
+        </p>
+{% endblock log_in_out %}
+
+{% block content %}
+    <h2>CS AmidA</h2>
+    <h3>Complex System for Analyses of Main Inspection Department Activity</h3>
+    <h4><i>Програмний комплекс створений для автоматизації роботи
+        підрозділів головної інспекції, зручної обродки даних, що створюються
+        в процесі їх діяльності, формування періодичної звітності та графічного
+        відображення відповідної статистичної інформації.</i></h4>
+
+
+{% endblock content %}
